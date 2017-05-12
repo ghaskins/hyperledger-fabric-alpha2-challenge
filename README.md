@@ -45,7 +45,7 @@ Write a simple Fabric app complete with chaincode and SDK client
 Deploy your application only through the SDK rather than the CLI (except perhaps for channel create/join).
 
 ### Rule 7
-As you go through the process: keep track of what points were unclear to you from a documentation perspective?  What steps were painful/awkward to deal with?  What steps, if any, didn't work or didn't work/perform as you expected?
+As you go through the process, keep track of problem areas.  For instance, what points were unclear to you from a documentation perspective?  What steps were painful/awkward to deal with?  What steps, if any, didn't work or didn't work/perform as you expected?
 
 ### Rule 8
 If you are unable to make your project work, please don't simply give up.  Ask questions.  File bugs.  We will conduct this challenge in a multi-round manner such that if your project is not possible to complete with v1.0.0-alpha2, perhaps it _will_ be after v1.0.0-alpha2.1, v1.0.0-alpha3, v1.0.0-beta1, etc.  The amount of releases we will produce between now and v1.0.0 GA is unknown, but could be significantly shaped by the feedback from this experiment.  The goal is that by v1.0.0 (GA), all submitted projects should be working.
