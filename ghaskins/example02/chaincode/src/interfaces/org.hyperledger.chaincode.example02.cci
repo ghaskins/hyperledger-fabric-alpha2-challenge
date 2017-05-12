@@ -1,0 +1,21 @@
+
+message PaymentParams {
+        string partySrc = 1;
+        string partyDst = 2;
+        int32  amount   = 3;
+}
+
+message Entity {
+        string id = 1;
+}
+
+message BalanceResult {
+        int32 balance = 1;
+}
+
+functions {
+        void MakePayment(PaymentParams) = 1;
+        void DeleteAccount(Entity) = 2;
+        BalanceResult CheckBalance(Entity) = 3;
+}
+
