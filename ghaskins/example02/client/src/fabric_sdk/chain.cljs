@@ -1,10 +1,11 @@
+;;-----------------------------------------------------------------------------
+;; Copyright 2017 Greg Haskins
+;;
+;; SPDX-License-Identifier: Apache-2.0
+;;-----------------------------------------------------------------------------
 (ns fabric-sdk.chain
   (:require-macros [fabric-sdk.macros :as m])
-  (:require [cljs.nodejs :as nodejs]
-            [promesa.core :as p :include-macros true]))
-
-(def peer (nodejs/require "fabric-client/lib/Peer.js"))
-(def orderer (nodejs/require "fabric-client/lib/Orderer.js"))
+  (:require [promesa.core :as p :include-macros true]))
 
 (defn new [client name]
   (.newChain client name))

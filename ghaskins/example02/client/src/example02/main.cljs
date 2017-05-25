@@ -1,3 +1,8 @@
+;;-----------------------------------------------------------------------------
+;; Copyright 2017 Greg Haskins
+;;
+;; SPDX-License-Identifier: Apache-2.0
+;;-----------------------------------------------------------------------------
 (ns example02.main
   (:require [clojure.string :as string]
             [cljs.nodejs :as nodejs]
@@ -8,6 +13,8 @@
 
 (nodejs/enable-util-print!)
 
+(def fs (nodejs/require "fs"))
+(def pathlib (nodejs/require "path"))
 (def readyaml (nodejs/require "read-yaml"))
 
 (def _commands
@@ -35,8 +42,7 @@
 (defn print-commands [] (->> commands keys vec print-str))
 
 (def options
-  [[nil "--config CONFIG" "path/to/client.config"
-    :default "client.config"]
+  [[nil "--config CONFIG" "path/to/client.config"]
    ["-p" "--path ID" "path/to/chaincode.car ('install' only)"]
    ["-i" "--id ID" "ChaincodeID"
     :default "mycc"]
@@ -64,7 +70,16 @@
                options-summary
                ""]))
 
+(defn- exist? [path]
+  (try
+    (.statSync fs path)
+    (catch js/Object e
+      nil)))
+
 (defn -main [& args]
+  ;; Initialize the protobuf layer, etc
+  (api/init (.resolve pathlib js/__dirname ".." "protos"))
+
   (let [{:keys [options arguments errors summary]} (parse-opts args options)
         {:keys [config command args]} options]
     (cond
@@ -74,6 +89,12 @@
 
       (not= errors nil)
       (exit -1 "Error: " (string/join errors))
+
+      (nil? config)
+      (exit -1 "Error: --config required (see --help)")
+
+      (not (exist? config))
+      (exit -1 (str "Error: config \"" config "\" not found"))
 
       :else
       (let [desc (commands command)

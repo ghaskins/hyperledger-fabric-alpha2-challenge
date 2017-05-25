@@ -1,3 +1,8 @@
+;;-----------------------------------------------------------------------------
+;; Copyright 2017 Greg Haskins
+;;
+;; SPDX-License-Identifier: Apache-2.0
+;;-----------------------------------------------------------------------------
 (ns example02.rpc
   (:require [cljs.nodejs :as nodejs]
             [fabric-sdk.core :as fabric]
