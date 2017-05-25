@@ -1,0 +1,59 @@
+{
+		"orderers": [
+			{
+			"api_url": "grpcs://localhost:7050",
+			"name": "orderer.blocledger.com",
+			"tls_cacerts": "./test/fixtures-V1/crypto-config/ordererOrganizations/blocledger.com/orderers/orderer.blocledger.com/msp/cacerts/ca.blocledger.com-cert.pem"
+			}
+		],
+		"cas": [
+			{
+			"name": "ca.blocledger.com",
+			"msp_id": "Org1MSP",
+			"api_url": "https://localhost:7054",
+			"tls_cacerts": "./test/fixtures-V1//crypto-config/peerOrganizations/org1.blocledger.com/ca/ca.org1.blocledger.com-cert.pem",
+			"users_clients": [
+					{
+							"affiliation": "org1",
+							"enrollId": "admin",
+							"enrollSecret": "adminpw",
+							"group": "bank_a",
+							"attrs": [
+									{
+											"name": "hf.Registrar.Roles",
+											"value": "client,user,peer,validator,auditor,ca"
+									},
+									{
+											"name": "hf.Registrar.DelegateRoles",
+											"value": "client,user,validator,auditor"
+									},
+									{
+										"name": "hf.Revoker",
+										"value": true
+									},
+									{
+										"name": "hf.IntermediateCA",
+										"value": true
+									}
+							]
+					}
+				]
+			}
+		],
+		"peers": [
+			{
+				"api_url": "grpcs://localhost:7051",
+				"event_url": "grpcs://localhost:7053",
+				"name": "peer0.org1.blocledger.com",
+				"tls_cacerts": "./test/fixtures-V1/crypto-config/peerOrganizations/org1.blocledger.com/peers/peer0.org1.blocledger.com/msp/cacerts/ca.org1.blocledger.com-cert.pem"
+			},
+			{
+				"api_url": "grpcs://localhost:7056",
+				"event_url": "grpcs://localhost:7058",
+				"name": "peer1.org1.blocledger.com",
+				"tls_cacerts": "./test/fixtures-V1/crypto-config/peerOrganizations/org1.blocledger.com/peers/peer1.org1.blocledger.com/msp/cacerts/ca.org1.blocledger.com-cert.pem"
+			}
+		],
+		"network_id": "v1",
+		"network_name": "peerOrg1"
+}

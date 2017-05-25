@@ -1,0 +1,15 @@
+**/node_modules
+**/public/vendor
+**/.*.swp
+tmp/
+credentials.js
+passwd
+rd
+cscope.files
+cscope.out
+test/fixtures-V1/channel.tx
+test/fixtures-V1/docker-compose.yamlt
+test/fixtures-V1/docker-compose.yaml
+test/fixtures-V1/fabricca/
+test/fixtures-V1/orderer.block
+test/fixtures-V1/crypto-config/

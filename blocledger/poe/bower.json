@@ -1,0 +1,27 @@
+{
+  "name": "poe",
+  "description": "DTM Blockchain Integration with SignNow",
+  "main": "api.js",
+  "license": "Apache2",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "js-sha3": "^0.5.4",
+    "js-sha256": "^0.3.2",
+    "ng-file-upload": "^12.2.11",
+    "angular-bootstrap": "^2.1.4",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "angular-route": "~1.5",
+    "angular-animate": "~1.5",
+    "angular": "~1.5",
+    "angular-ui-grid": "^4.0.1"
+  }
+}

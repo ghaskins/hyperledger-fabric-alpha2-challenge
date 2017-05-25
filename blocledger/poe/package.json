@@ -1,0 +1,47 @@
+{
+  "name": "poe",
+  "version": "0.0.1",
+  "description": "Proof of Existence",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install",
+    "start": "node api.js"
+  },
+  "dependencies": {
+    "async": "^2.3.0",
+    "atob": "^2.0.3",
+    "body-parser": "^1.15.1",
+    "bootstrap": "^3.3.6",
+    "bower": "^1.8.0",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-alpha.3",
+    "debug": "^2.2.0",
+    "express": "^4.13.4",
+    "express-session": "^1.15.1",
+    "fabric-ca-client": "1.0.0-alpha2",
+    "fabric-client": "1.0.0-alpha2",
+    "grpc": ">=1.1.2 <1.3.0",
+    "js-sha256": "^0.5.0",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "q": "^1.4.1",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.3",
+    "rest": "^2.0.0",
+    "superagent": "^3.5.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-jscs": "^4.0.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-mocha": "^2.2.0",
+    "gulp-nodemon": "^2.2.1",
+    "jshint": "^2.9.2",
+    "mocha": "^2.5.3",
+    "superagent": "^3.0.0"
+  }
+}
