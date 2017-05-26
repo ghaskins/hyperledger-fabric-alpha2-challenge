@@ -1,0 +1,9 @@
+<div uib-alert class="alert-info" ng-show="showInfo" close="showInfo=false" style="overflow-wrap: break-word;">
+   {{infoMsg}}
+</div>
+<div uib-alert class="alert-info" ng-show="showAlert" close="showAlert=false" style="overflow-wrap: break-word;">
+  <strong>Success: </strong>  {{alertMsg}}
+</div>
+<div uib-alert class="alert-danger" ng-show="showErrorAlert" close="showErrorAlert=false" style="overflow-wrap: break-word;">
+  <strong>Failed:  </strong>  {{alertErrorMsg}}
+</div>

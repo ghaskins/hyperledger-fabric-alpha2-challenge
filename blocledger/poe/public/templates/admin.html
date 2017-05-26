@@ -1,0 +1,29 @@
+<div ng-show='loggedIn'>
+  <h3>Chaincode deploy</h3>
+  <button class="btn btn-primary btn-lg" ng-click="deploy()"
+  uib-tooltip="Click to deploy chaincode" tooltip-placement="right">
+    <span class="glyphicon glyphicon-ok"></span> Deploy</button>
+</div>
+
+<div ng-show='!loggedIn'>
+  <h3>Initial login</h3>
+  <a class="btn btn-primary btn-lg" ng-href="#!/login"
+  uib-tooltip="Click to log in" tooltip-placement="right">
+    <span class="glyphicon glyphicon-ok"></span> Login</a>
+</div>
+
+<transaction-alerts></transaction-alerts>
+
+<div ng-show='adminPriv'>
+  <h3>Add a user</h3>
+  <a class="btn btn-primary btn-lg" ng-href="#!/addUser"
+  uib-tooltip="Click to add a user" tooltip-placement="right">
+    <span class="glyphicon glyphicon-ok"></span> Add User</a>
+</div>
+
+<div ng-show='adminPriv'>
+  <h3>Edit a user</h3>
+  <a class="btn btn-primary btn-lg" ng-href="#!/editUser"
+  uib-tooltip="Click to edit a user" tooltip-placement="right">
+    <span class="glyphicon glyphicon-ok"></span> Edit User</a>
+</div>

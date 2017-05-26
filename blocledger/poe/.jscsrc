@@ -1,0 +1,16 @@
+{
+    "preset": "google",
+    "validateLineBreaks": "LF",
+    "maximumLineLength": {
+      "value": 100,
+      "allExcept": ["comments", "regex"]
+    }
+//    "disallowSpacesInAnonymousFunctionExpression": null,
+//    "requireSpacesInAnonymousFunctionExpression": {
+//      "beforeOpeningRoundBrace": true,
+//      "allExcept": ["shorthand"]
+//    },
+//    "disallowSpacesInFunctionExpression": {
+//      "beforeOpeningRoundBrace": true
+//    }
+}

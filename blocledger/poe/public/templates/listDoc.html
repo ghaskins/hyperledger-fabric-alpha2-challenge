@@ -1,0 +1,57 @@
+<div ng-show='loggedIn'>
+
+<h2 class="sub-header">Document List</h2>
+<!-- <div class="table-responsive" >  -->
+  <table class="table table-striped table-condensed hideOverflow">
+    <thead>
+      <tr>
+        <th class="col-sm-2">Hash</th>
+        <th class="col-sm-2">File Name</th>
+        <th class="col-sm-1">Owner</th>
+        <th class="col-sm-1">Date</th>
+        <th class="col-sm-1">Tx ID</th>
+        <th class="col-sm-2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="(hash, doc) in docList" >
+        <td class="col-sm-2 " uib-popover="{{ doc.Hash }}" popover-placement="right" popover-append-to-body="true"><samp>{{ doc.Hash }}</samp></td>
+        <td>{{ doc.Name }}</td>
+        <td>{{ doc.Owner }}</td>
+        <td>{{doc.Date.Seconds * 1000 + doc.Date.Nanos / 1000000 | date:'medium'}}</td>
+        <td><a href="" data-toggle="modal" data-target="#myModal" ng-click="popup(doc.TxID)">{{ doc.TxID  }}</a></td>
+        <td>
+          <button class="btn btn-info" ng-click="edit(doc)">Edit</button>
+          <button class="btn btn-danger" ng-click="delete(doc)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<!-- </div>  -->
+
+</div>
+
+<div ng-show='!loggedIn'>
+  <h3>Initial login</h3>
+  <a class="btn btn-primary btn-lg" ng-href="#!/login"
+  uib-tooltip="Click to log in" tooltip-placement="right">
+    <span class="glyphicon glyphicon-ok"></span> Login</a>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Transaction details</h4>
+      </div>
+      <div class="modal-body">
+        <pre>{{popupTransaction | json}}</pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
